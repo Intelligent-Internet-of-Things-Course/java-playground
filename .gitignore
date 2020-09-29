@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+.idea/workspace.xml
+csv/
+/target/
+.classpath
+.project
+.settings
+.gradle
+*.iml
