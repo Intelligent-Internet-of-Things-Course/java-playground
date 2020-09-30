@@ -1,4 +1,4 @@
-package it.unimore.playground.sensor.process;
+package it.unimore.playground.sensor.process.raw;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

@@ -1,4 +1,4 @@
-package it.unimore.playground.sensor.process;
+package it.unimore.playground.sensor.process.simple;
 
 import com.google.gson.Gson;
 import it.unimore.playground.sensor.model.SensorData;
