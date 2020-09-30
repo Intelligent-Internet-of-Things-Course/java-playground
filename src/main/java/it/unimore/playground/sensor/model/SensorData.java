@@ -1,6 +1,7 @@
-package it.unimore.playground.model;
+package it.unimore.playground.sensor.model;
 
-/** Sensor data.
+/**
+ * Sensor data.
  */
 public class SensorData {
 
@@ -30,5 +31,14 @@ public class SensorData {
 
 	public void setValue(float value) {
 		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		final StringBuffer sb = new StringBuffer("SensorData{");
+		sb.append("id='").append(id).append('\'');
+		sb.append(", value=").append(value);
+		sb.append('}');
+		return sb.toString();
 	}
 }

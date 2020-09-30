@@ -6,7 +6,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
-/** TCP server that receives a textual message.
+/**
+ * TCP server that receives a textual message.
  */
 public abstract class TcpServer {
 
@@ -17,16 +18,16 @@ public abstract class TcpServer {
 		System.out.println("TCP server on port: "+socketServer.getLocalPort());
 		System.out.println("waiting...");
 
-		Socket socket=socketServer.accept();
+		Socket socket = socketServer.accept();
 		socketServer.close();
 
-		InputStream is=socket.getInputStream();
+		InputStream is = socket.getInputStream();
 
 		byte[] buffer=new byte[2000];
 
 		int len;
 
-		while ((len=is.read(buffer))>0) {
+		while ((len = is.read(buffer))>0) {
 			System.out.println("from '"+socket.getRemoteSocketAddress()+"': "+new String(buffer,0,len));
 		}
 

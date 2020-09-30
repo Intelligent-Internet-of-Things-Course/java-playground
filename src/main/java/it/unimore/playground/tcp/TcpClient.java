@@ -6,27 +6,28 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 
-/** Program that sends a message to a TCP server and receives the reply.
+/**
+ * Program that sends a message to a TCP server and receives the reply.
  */
 public abstract class TcpClient {
 
 	public static void main(String[] args) throws IOException {
 
-		String destAddr="127.0.0.1";
+		String destAddr = "127.0.0.1";
 
-		int destPort=4000;
-		byte[] data="test".getBytes();
+		int destPort = 4000;
+		byte[] data = "test".getBytes();
 
-		Socket socket=new Socket(destAddr,destPort);
+		Socket socket = new Socket(destAddr,destPort);
 
-		OutputStream os=socket.getOutputStream();
+		OutputStream os = socket.getOutputStream();
 		os.write(data);
 
 		System.out.println("sent: "+new String(data));
 
-		InputStream is=socket.getInputStream();
+		InputStream is = socket.getInputStream();
 
-		byte[] buffer=new byte[2000];
+		byte[] buffer = new byte[2000];
 
 		int len=is.read(buffer);
 
