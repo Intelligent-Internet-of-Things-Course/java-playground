@@ -14,8 +14,9 @@ public abstract class TcpClient {
 	public static void main(String[] args) throws IOException {
 
 		String destAddr = "127.0.0.1";
-
 		int destPort = 4000;
+
+		//Send Message
 		byte[] data = "test".getBytes();
 
 		Socket socket = new Socket(destAddr,destPort);
@@ -23,13 +24,14 @@ public abstract class TcpClient {
 		OutputStream os = socket.getOutputStream();
 		os.write(data);
 
-		System.out.println("sent: "+new String(data));
+		System.out.println("sent: " + new String(data));
 
+		//Receive Message
 		InputStream is = socket.getInputStream();
 
 		byte[] buffer = new byte[2000];
 
-		int len=is.read(buffer);
+		int len = is.read(buffer);
 
 		System.out.println("received: "+new String(buffer,0,len));
 

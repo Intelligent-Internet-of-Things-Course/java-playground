@@ -15,11 +15,12 @@ public class UdpSender {
 
 		String destAddr = "127.0.0.1";
 		int destPort = 4000;
+
 		byte[] data = "test".getBytes();
 
 		DatagramSocket socket = new DatagramSocket();
-		DatagramPacket packet = new DatagramPacket(data,data.length);
 
+		DatagramPacket packet = new DatagramPacket(data,data.length);
 		packet.setAddress(Inet4Address.getByName(destAddr));
 		packet.setPort(destPort);
 

@@ -13,7 +13,7 @@ public class UdpReceiver {
 
 		DatagramSocket socket = new DatagramSocket(4000);
 
-		System.out.println("UDP receiver on port: "+socket.getLocalPort());
+		System.out.println("UDP receiver on port: " + socket.getLocalPort());
 
 		byte[] buffer = new byte[2000];
 

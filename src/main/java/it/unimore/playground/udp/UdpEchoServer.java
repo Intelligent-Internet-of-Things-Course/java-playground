@@ -24,6 +24,7 @@ public class UdpEchoServer {
 		System.out.println("waiting...");
 
 		while (true) {
+
 			socket.receive(packet);
 
 			String data = new String(packet.getData(),packet.getOffset(),packet.getLength());
@@ -31,7 +32,8 @@ public class UdpEchoServer {
 			System.out.println("from '"+packet.getSocketAddress()+"': "+data);
 
 			socket.send(packet);
-		}	
+		}
+
 		//socket.close();
 	}
 

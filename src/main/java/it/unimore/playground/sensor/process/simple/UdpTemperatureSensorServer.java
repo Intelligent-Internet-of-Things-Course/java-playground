@@ -40,6 +40,7 @@ public class UdpTemperatureSensorServer {
 			String request = new String(packet.getData(),packet.getOffset(),packet.getLength());
 			System.out.println("Request received from "+packet.getSocketAddress().toString().substring(1)+": "+request);
 
+			//Accpted Request Model -> GET <sensorId>
 			if (request.startsWith("GET " + temperatureSensorDescriptor.getDeviceId())) {
 
 				//Update Temperature Sensor Value

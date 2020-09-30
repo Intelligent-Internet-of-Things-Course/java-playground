@@ -19,6 +19,7 @@ public class UdpClient {
 
 		DatagramSocket socket = new DatagramSocket();
 
+		//Send Data Packet to Server
 		DatagramPacket packet = new DatagramPacket(data,data.length);
 		packet.setAddress(Inet4Address.getByName(destAddr));
 		packet.setPort(destPort);
@@ -27,10 +28,10 @@ public class UdpClient {
 
 		System.out.println("sent: "+new String(data));
 
+
+		//Received Data Packet from Server
 		byte[] buffer = new byte[2000];
-
 		packet = new DatagramPacket(buffer,buffer.length);
-
 		socket.receive(packet);
 
 		String resp = new String(packet.getData(),packet.getOffset(),packet.getLength());
