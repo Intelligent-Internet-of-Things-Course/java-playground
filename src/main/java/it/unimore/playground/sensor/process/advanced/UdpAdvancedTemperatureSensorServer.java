@@ -14,8 +14,8 @@ import java.util.Random;
 
 /**
  * UDP Temperature Sensor server.
- * It receives requests formed by the 'GET' string followed by the sensor id,
- * and responds with 'OK' followed by sensor id and SensorData structure payload (in JSON format).
+ * It receives a JSON requests structured through the SensorDataRequest class and responds with
+ * a JSON message structured using the SensorDataResponse class..
  */
 public class UdpAdvancedTemperatureSensorServer {
 

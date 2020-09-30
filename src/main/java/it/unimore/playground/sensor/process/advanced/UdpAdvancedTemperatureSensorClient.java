@@ -12,8 +12,8 @@ import java.net.Inet4Address;
 
 /**
  * Program that sends a request message to a UDP sensor server and receives the response.
- * The request should be formed by the string 'GET' followed by the sensor id,
- * while the response is formed by the string 'OK' followed by a JSON string containing the sensor id and value.
+ * The request is through the SensorDataRequest class and the response with the SensorDataResponse object.
+ * Both request and response are serialized and deserialized using JSON.
  */
 public class UdpAdvancedTemperatureSensorClient {
 
