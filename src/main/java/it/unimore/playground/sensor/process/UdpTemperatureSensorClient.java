@@ -1,7 +1,6 @@
 package it.unimore.playground.sensor.process;
 
 import com.google.gson.Gson;
-import it.unimore.playground.sensor.model.RawSensorData;
 import it.unimore.playground.sensor.model.SensorData;
 
 import java.io.IOException;
