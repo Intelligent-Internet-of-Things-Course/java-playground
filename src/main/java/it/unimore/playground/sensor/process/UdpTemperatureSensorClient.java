@@ -1,20 +1,20 @@
 package it.unimore.playground.sensor.process;
 
+import com.google.gson.Gson;
+import it.unimore.playground.sensor.model.RawSensorData;
+import it.unimore.playground.sensor.model.SensorData;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.Inet4Address;
-
-import com.google.gson.Gson;
-import it.unimore.playground.sensor.model.SensorData;
-
 
 /**
  * Program that sends a request message to a UDP sensor server and receives the response.
  * The request should be formed by the string 'GET' followed by the sensor id,
  * while the response is formed by the string 'OK' followed by a JSON string containing the sensor id and value.
  */
-public class UdpSensorClient {
+public class UdpTemperatureSensorClient {
 
 	public static void main(String[] args) throws IOException {
 
@@ -22,7 +22,7 @@ public class UdpSensorClient {
 		int destPort = 4000;
 
 		//Custom Command Request to access target sensor data
-		String request = "GET sensor02";
+		String request = "GET tempSensor1";
 
 		DatagramSocket socket = new DatagramSocket();
 
@@ -48,13 +48,13 @@ public class UdpSensorClient {
 		if (response.startsWith("OK ")) {
 
 			//Remove Control String
-			response=response.substring(3);
+			response = response.substring(3);
 
 			SensorData sensorData = parseJsonString(response);
 
 			if(sensorData != null){
-				System.out.println("SensorData Object -> id: "+sensorData.id);
-				System.out.println("SensorData Object -> value: "+sensorData.value);
+				System.out.println("RawSensorData Object -> Device Descriptor: " + sensorData.getDeviceDescriptor());
+				System.out.println("RawSensorData Object -> Value: " + sensorData.getValue());
 			}
 			else
 				System.err.println("Error Parsing Response ! SensorData = Null !");

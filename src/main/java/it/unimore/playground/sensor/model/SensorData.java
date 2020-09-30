@@ -5,24 +5,24 @@ package it.unimore.playground.sensor.model;
  */
 public class SensorData {
 
-	public String id;
-	
-	public float value;
+	private DeviceDescriptor deviceDescriptor = null;
+
+	private float value;
 
 	public SensorData() {
 	}
 
-	public SensorData(String id, float value) {
-		this.id = id;
+	public SensorData(DeviceDescriptor deviceDescriptor, float value) {
+		this.deviceDescriptor = deviceDescriptor;
 		this.value = value;
 	}
 
-	public String getId() {
-		return id;
+	public DeviceDescriptor getDeviceDescriptor() {
+		return deviceDescriptor;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setDeviceDescriptor(DeviceDescriptor deviceDescriptor) {
+		this.deviceDescriptor = deviceDescriptor;
 	}
 
 	public float getValue() {
@@ -36,7 +36,7 @@ public class SensorData {
 	@Override
 	public String toString() {
 		final StringBuffer sb = new StringBuffer("SensorData{");
-		sb.append("id='").append(id).append('\'');
+		sb.append("deviceDescriptor=").append(deviceDescriptor);
 		sb.append(", value=").append(value);
 		sb.append('}');
 		return sb.toString();

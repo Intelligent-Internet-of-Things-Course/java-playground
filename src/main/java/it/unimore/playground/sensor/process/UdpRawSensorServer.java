@@ -11,7 +11,7 @@ import java.util.Random;
  * It receives requests formed by the 'GET' string followed by the sensor id,
  * and responds with 'OK' followed by sensor id and data (in JSON format).
  */
-public class UdpSensorServer {
+public class UdpRawSensorServer {
 
 	public static void main(String[] args) throws IOException {
 

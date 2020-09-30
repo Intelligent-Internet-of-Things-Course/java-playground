@@ -2,6 +2,7 @@ package it.unimore.playground.sensor.process;
 
 import com.google.gson.Gson;
 import it.unimore.playground.sensor.model.SensorData;
+import it.unimore.playground.sensor.model.TemperatureSensorDescriptor;
 
 import java.util.Random;
 
@@ -17,7 +18,8 @@ public class JsonTester {
         //Random number generator
         Random rand = new Random();
 
-        SensorData sensorData = new SensorData("testSensorId", rand.nextFloat());
+        TemperatureSensorDescriptor temperatureSensorDescriptor = new TemperatureSensorDescriptor("tempSensor1", "0.0.1", "Acme Corporation");
+        SensorData sensorData = new SensorData(temperatureSensorDescriptor, rand.nextFloat());
 
         System.out.println("Original SensorData: " + sensorData.toString() + " ObjectId: " + System.identityHashCode(sensorData));
 
