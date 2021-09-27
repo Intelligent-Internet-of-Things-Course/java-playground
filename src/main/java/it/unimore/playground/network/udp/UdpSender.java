@@ -1,4 +1,4 @@
-package it.unimore.playground.udp;
+package it.unimore.playground.network.udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

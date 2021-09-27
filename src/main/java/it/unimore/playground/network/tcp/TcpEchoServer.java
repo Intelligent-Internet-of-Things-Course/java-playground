@@ -1,4 +1,4 @@
-package it.unimore.playground.tcp;
+package it.unimore.playground.network.tcp;
 
 import java.io.IOException;
 import java.io.InputStream;
