@@ -11,6 +11,7 @@ public class MyDevice {
     private String type;
     private String manufacturer;
     private String softwareVersion;
+    private GeoLocation location;
 
     public MyDevice() {
     }
@@ -20,6 +21,11 @@ public class MyDevice {
         this.type = type;
         this.manufacturer = manufacturer;
         this.softwareVersion = softwareVersion;
+    }
+
+    public MyDevice(String id, String type, String manufacturer, String softwareVersion, GeoLocation location) {
+        this(id, type, manufacturer, softwareVersion);
+        this.location = location;
     }
 
     public String getId() {
@@ -54,6 +60,14 @@ public class MyDevice {
         this.softwareVersion = softwareVersion;
     }
 
+    public GeoLocation getLocation() {
+        return location;
+    }
+
+    public void setLocation(GeoLocation location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("MyDevice{");
@@ -61,6 +75,7 @@ public class MyDevice {
         sb.append(", type='").append(type).append('\'');
         sb.append(", manufacturer='").append(manufacturer).append('\'');
         sb.append(", softwareVersion='").append(softwareVersion).append('\'');
+        sb.append(", location=").append(location);
         sb.append('}');
         return sb.toString();
     }

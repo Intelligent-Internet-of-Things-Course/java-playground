@@ -11,9 +11,7 @@ public class MyPointOfInterest {
 
     private String name;
 
-    private double latitude;
-
-    private double longitude;
+    private GeoLocation location;
 
     private ArrayList<MyDevice> deviceList;
 
@@ -21,17 +19,10 @@ public class MyPointOfInterest {
         this.deviceList = new ArrayList<>();
     }
 
-    public MyPointOfInterest(String name, double latitude, double longitude) {
+    public MyPointOfInterest(String name, GeoLocation location) {
         this();
         this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
-
-    public MyPointOfInterest(double latitude, double longitude) {
-        this();
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.location = location;
     }
 
     public void addDevice(MyDevice device){
@@ -50,20 +41,12 @@ public class MyPointOfInterest {
             this.deviceList.addAll(deviceList);
     }
 
-    public double getLatitude() {
-        return latitude;
+    public GeoLocation getLocation() {
+        return location;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public void setLocation(GeoLocation location) {
+        this.location = location;
     }
 
     public ArrayList<MyDevice> getDeviceList() {
@@ -82,8 +65,7 @@ public class MyPointOfInterest {
     public String toString() {
         final StringBuffer sb = new StringBuffer("MyPointOfInterest{");
         sb.append("name='").append(name).append('\'');
-        sb.append(", latitude=").append(latitude);
-        sb.append(", longitude=").append(longitude);
+        sb.append(", location=").append(location.toString());
         sb.append(", deviceList=").append(deviceList);
         sb.append('}');
         return sb.toString();
