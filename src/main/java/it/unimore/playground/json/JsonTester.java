@@ -18,10 +18,13 @@ public class JsonTester {
         //Random number generator
         Random rand = new Random();
 
-        TemperatureSensorDescriptor temperatureSensorDescriptor = new TemperatureSensorDescriptor("tempSensor1", "0.0.1", "Acme Corporation");
+        TemperatureSensorDescriptor temperatureSensorDescriptor = new TemperatureSensorDescriptor("tempSensor1",
+                "0.0.1",
+                "Acme Corporation");
+
         SensorData sensorData = new SensorData(temperatureSensorDescriptor, rand.nextFloat());
 
-        System.out.println("Original SensorData: " + sensorData.toString() + " ObjectId: " + System.identityHashCode(sensorData));
+        System.out.println("Original SensorData: " + sensorData + " ObjectId: " + System.identityHashCode(sensorData));
 
         //Init Gson main object to handle Json serialization and deserialization
         Gson gson = new Gson();
@@ -32,7 +35,9 @@ public class JsonTester {
 
         SensorData deserializedObject = gson.fromJson(serializedJsonString, SensorData.class);
 
-        System.out.println("Deserialized SensorData: " + deserializedObject.toString() + " ObjectId: " + System.identityHashCode(deserializedObject));
+        System.out.println("Deserialized SensorData: " +
+                deserializedObject.toString() +
+                " ObjectId: " + System.identityHashCode(deserializedObject));
 
     }
 
