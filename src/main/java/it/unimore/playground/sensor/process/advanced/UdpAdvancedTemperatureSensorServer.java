@@ -49,7 +49,7 @@ public class UdpAdvancedTemperatureSensorServer {
 				//Update Temperature Sensor Value
 				sensorData.setValue(rand.nextFloat());
 
-				String responseJsonPayload = generateSensorDataResponsePayloadString(SensorDataResponse.OK_RESPOSE, sensorData);
+				String responseJsonPayload = generateSensorDataResponsePayloadString(SensorDataResponse.OK_RESPONSE, sensorData);
 
 				if(responseJsonPayload == null)
 					System.err.println("Error Generating JSON Payload ! Payload = Null !");

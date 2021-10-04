@@ -7,7 +7,7 @@ package it.unimore.playground.sensor.model;
  */
 public class SensorDataResponse {
 
-    public static final String OK_RESPOSE = "OK";
+    public static final String OK_RESPONSE = "OK";
     public static final String ERROR_RESPONSE = "ERROR";
 
     private String status;

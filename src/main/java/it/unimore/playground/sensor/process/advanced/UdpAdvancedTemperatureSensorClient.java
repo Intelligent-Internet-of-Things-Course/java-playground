@@ -1,7 +1,6 @@
 package it.unimore.playground.sensor.process.advanced;
 
 import com.google.gson.Gson;
-import it.unimore.playground.sensor.model.SensorData;
 import it.unimore.playground.sensor.model.SensorDataRequest;
 import it.unimore.playground.sensor.model.SensorDataResponse;
 
@@ -51,7 +50,7 @@ public class UdpAdvancedTemperatureSensorClient {
 
 		if (sensorDataResponse != null) {
 
-			if(sensorDataResponse.getStatus().equals(SensorDataResponse.OK_RESPOSE)){
+			if(sensorDataResponse.getStatus().equals(SensorDataResponse.OK_RESPONSE)){
 				System.out.println("RawSensorData Object -> Device Descriptor: " + sensorDataResponse.getSensorData().getDeviceDescriptor());
 				System.out.println("RawSensorData Object -> Value: " + sensorDataResponse.getSensorData().getValue());
 			}
