@@ -23,7 +23,9 @@ public class UdpReceiver {
 
 		socket.receive(packet);
 
-		String data = new String(packet.getData(),packet.getOffset(),packet.getLength());
+		String data = new String(packet.getData(),
+				packet.getOffset(),
+				packet.getLength());
 
 		System.out.println("from '"+packet.getSocketAddress()+"': "+data);
 
