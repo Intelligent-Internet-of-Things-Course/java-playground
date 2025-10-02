@@ -7,11 +7,11 @@ import java.util.ArrayList;
  * @project java-playground
  * @created 27/09/2021 - 12:52
  */
-public class MyDeviceManager {
+public class ControlUnit {
 
     private ArrayList<MyPointOfInterest> poiList = null;
 
-    public MyDeviceManager() {
+    public ControlUnit() {
         this.poiList = new ArrayList<>();
     }
 

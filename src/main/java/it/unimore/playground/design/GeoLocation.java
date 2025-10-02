@@ -52,6 +52,17 @@ public class GeoLocation {
     }
 
     /**
+     * Calculate distance between the current GeoLocation and another point passed as parameter.
+     * This method uses the static method distanceMeters.
+     *
+     * @return Distance in Meters
+     * @param geoLocation The other GeoPoint used to compute the distance
+     */
+    public double distanceTo(GeoLocation geoLocation){
+        return distanceMeters(this, geoLocation);
+    }
+
+    /**
      * Calculate distance between two points in latitude and longitude taking
      * into account height difference. If you are not interested in height
      * difference pass 0.0. Uses Haversine method as its base.

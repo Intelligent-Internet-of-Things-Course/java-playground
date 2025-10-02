@@ -14,7 +14,7 @@ public class DesignTester {
         MyPointOfInterest fumPoI = initFumPoI();
         MyPointOfInterest palazzoDucalePoI = initPalazzoDucalePoI();
 
-        MyDeviceManager deviceManager = new MyDeviceManager();
+        ControlUnit deviceManager = new ControlUnit();
         deviceManager.addPoI(fumPoI);
         deviceManager.addPoI(palazzoDucalePoI);
 

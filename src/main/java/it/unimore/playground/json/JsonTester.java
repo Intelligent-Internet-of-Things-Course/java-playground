@@ -18,7 +18,8 @@ public class JsonTester {
         //Random number generator
         Random rand = new Random();
 
-        TemperatureSensorDescriptor temperatureSensorDescriptor = new TemperatureSensorDescriptor("tempSensor1",
+        TemperatureSensorDescriptor temperatureSensorDescriptor = new TemperatureSensorDescriptor(
+                "tempSensor1",
                 "0.0.1",
                 "Acme Corporation");
 
